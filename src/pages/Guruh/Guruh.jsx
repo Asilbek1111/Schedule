@@ -5,7 +5,7 @@ function Guruh() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  const {group} = useContext(MyContext);
+  const { group, course } = useContext(MyContext);
   var week = [
     "Dushanba",
     "Seshanba",
@@ -18,7 +18,7 @@ function Guruh() {
 
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=13&_education_year=2022`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}&_education_year=2022`,
       {
         method: "GET",
         headers: {
