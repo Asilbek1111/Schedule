@@ -13,7 +13,7 @@ const Guruhlar = () => {
   // similar to componentDidMount()
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?limit=400&l=uz&_faculty=22&_semester=${course}&_education_year=${year}`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?limit=400&l=uz&_faculty=22&_semester=${course}&_education_year=2022`,
       {
         method: "GET",
         headers: {
