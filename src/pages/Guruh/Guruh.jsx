@@ -19,7 +19,7 @@ function Guruh() {
 
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}&_education_year=${year}`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}&_education_year=2022`,
       {
         method: "GET",
         headers: {
@@ -69,6 +69,7 @@ function Guruh() {
 
           setSchedule(dayArr);
           console.log(dayArr);
+          console.log(year);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
