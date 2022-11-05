@@ -15,7 +15,7 @@ const Kurs = () => {
         onClick={() => {
           navigate("/guruhlar");
           setCourse(11);
-          setYear(2022);
+          setYear('2022');
 
         }}
       >
@@ -27,7 +27,7 @@ const Kurs = () => {
         onClick={() => {
           navigate("/guruhlar");
           setCourse(13);
-          setYear(2021);
+          setYear('2021');
         }}
       >
         2-kurs
@@ -38,7 +38,7 @@ const Kurs = () => {
         onClick={() => {
           navigate("/guruhlar");
           setCourse(15);
-          setYear(2020);
+          setYear('2020');
 
         }}
       >
@@ -50,7 +50,7 @@ const Kurs = () => {
         onClick={() => {
           navigate("/guruhlar");
           setCourse(17);
-          setYear(2019);
+          setYear('2019');
 
         }}
       >
