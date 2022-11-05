@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const Home = () => {
   var navigate = useNavigate();
   return (
-    <div className="home text-center justify-content-center d-flex col-md-12 mt-5">
+    <div className="home text-center justify-content-center d-flex col-md-12 ">
       <button
         onClick={() => {
           navigate("/kurs");
         }}
         type="button"
-        className="btn btn-primary  col-md-3 p-2 fs-2"
+        className="btn btn-warning  col-md-3 p-2 fs-2"
       >
         Ingliz Filologiyasi Fakulteti
       </button>

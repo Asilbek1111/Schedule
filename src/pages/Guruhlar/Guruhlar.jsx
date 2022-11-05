@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../Context/Courses";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const Guruhlar = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  const { course, setGroup } = useContext(MyContext);
+  const { course, setGroup, year } = useContext(MyContext);
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?limit=400&l=uz&_faculty=22&_semester=${course}&_education_year=2022`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?limit=400&l=uz&_faculty=22&_semester=${course}&_education_year=${year}`,
       {
         method: "GET",
         headers: {
@@ -41,18 +42,16 @@ const Guruhlar = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="text-center justify-content-center">
-        <table className="table table-striped">
+      <div className="guruhlar text-center justify-content-center col-12">
+        <ul className="list-group">
           {items.map((item) => (
-            <tr>
-              <td className="fs-5" key={item.id}>
-                <Link to="/guruh" onClick={() => setGroup(item.group.id)}>
-                  {item.group.name}
-                </Link>
-              </td>
-            </tr>
+            <li className="list-group-item" key={item.id}>
+              <Link to="/guruh" onClick={() => setGroup(item.group.id)}>
+                {item.group.name}
+              </Link>
+            </li>
           ))}
-        </table>
+        </ul>
       </div>
     );
   }

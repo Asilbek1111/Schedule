@@ -4,3 +4,8 @@
   text-align: center;
   align-items: center;
 }
+
+.kurs {
+  height: 100vh;
+  background-image: url("../../assets/bg2.webp");
+}
