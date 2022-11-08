@@ -19,7 +19,7 @@ function Guruh() {
 
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}&_week=40564&_education_year=2022`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}&_week=40570&_education_year=2022`,
       {
         method: "GET",
         headers: {
