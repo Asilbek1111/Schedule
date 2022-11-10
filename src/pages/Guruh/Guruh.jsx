@@ -88,47 +88,49 @@ function Guruh() {
   } else {
     return (
       <div className="guruh">
-        {schedule.length !== 0 ? (
-          schedule?.map((item, index) => (
-            <div key={index} className="row item mb-4">
-              <div className="col-12 col-md-1 header py-4 d-flex align-items-center justify-content-center">
-                <p className="m-0 writing-mode">{week[index]}</p>
+        <div className="container col-md-9 ms-auto me-auto">
+          {schedule.length !== 0 ? (
+            schedule?.map((item, index) => (
+              <div key={index} className="row item mb-4">
+                <div className="col-12 col-md-1 header py-4 d-flex align-items-center justify-content-center">
+                  <p className="m-0 writing-mode">{week[index]}</p>
+                </div>
+                <div className="col-12 col-md-11">
+                  <table className="table table-striped w-100">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">End time</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Xona</th>
+                        <th scope="col">Turi</th>
+                        <th scope="col">O'qituvchi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item
+                        .sort((a, b) => a.id > b.id)
+                        .map((lesson) => (
+                          <tr key={lesson.id}>
+                            <th scope="row">{lesson.lessonPair.name}</th>
+                            <td>{lesson.lessonPair.start_time}</td>
+                            <td>{lesson.lessonPair.end_time}</td>
+                            <td>{lesson.subject.name}</td>
+                            <td>{lesson.auditorium.name}</td>
+                            <td>{lesson.trainingType.name}</td>
+                            <td>{lesson.employee.name}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div className="col-12 col-md-11">
-                <table className="table table-striped w-100">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Start Time</th>
-                      <th scope="col">End time</th>
-                      <th scope="col">Subject</th>
-                      <th scope="col">Xona</th>
-                      <th scope="col">Turi</th>
-                      <th scope="col">O'qituvchi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {item
-                      .sort((a, b) => a.id > b.id)
-                      .map((lesson) => (
-                        <tr key={lesson.id}>
-                          <th scope="row">{lesson.lessonPair.name}</th>
-                          <td>{lesson.lessonPair.start_time}</td>
-                          <td>{lesson.lessonPair.end_time}</td>
-                          <td>{lesson.subject.name}</td>
-                          <td>{lesson.auditorium.name}</td>
-                          <td>{lesson.trainingType.name}</td>
-                          <td>{lesson.employee.name}</td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))
-        ) : (
-          <h2 className="text-center">Sizda dars jadvali shakillanmagan</h2>
-        )}
+            ))
+          ) : (
+            <h2 className="text-center">Sizda dars jadvali shakillanmagan</h2>
+          )}
+        </div>
       </div>
     );
   }
