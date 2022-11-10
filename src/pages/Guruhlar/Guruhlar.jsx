@@ -43,7 +43,7 @@ const Guruhlar = () => {
   } else {
     return (
       <div className="guruhlar text-center justify-content-center col-12">
-        <ul className="list-group">
+        <ul className="list-group col-md-5 ms-auto me-auto">
           {items.map((item) => (
             <li className="list-group-item" key={item.id}>
               <Link to="/guruh" onClick={() => setGroup(item.group.id)}>
