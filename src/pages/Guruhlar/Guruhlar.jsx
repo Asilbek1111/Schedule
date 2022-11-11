@@ -18,7 +18,7 @@ const Guruhlar = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer UmFUTOAeRhfGOw-l4znYKHgVNviO5uZ-",
+          Authorization: "Bearer wJm5Q0Yv7Gt7OPvZCwCZQTm04GLX0mP2",
         },
       }
     )
