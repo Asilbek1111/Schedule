@@ -16,10 +16,16 @@ function Guruh() {
     "Shanba",
   ];
   const [schedule, setSchedule] = useState([]);
+  {
+    /**&_semester=${course} */
+  }
+  var n = new Date();
+  var diff = n.getTimezoneOffset();
+  var dateToday = Math.floor(Date.now() / 1000 + 360 * diff);
 
   useEffect(() => {
     fetch(
-      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_semester=${course}`,
+      `https://student.uzswlu.uz/rest/v1/data/schedule-list?l=uz&_faculty=22&_group=${group}&_weekStartTime=${dateToday}`,
       {
         method: "GET",
         headers: {
